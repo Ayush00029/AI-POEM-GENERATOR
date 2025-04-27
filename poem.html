@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerseCraft AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcomeScreen">
+        <h1>Welcome to VerseCraft AI</h1>
+        <p>Unleash your creativity into poetry ✨</p>
+        <button id="enterBtn">Enter</button>
+    </div>
+
+    <div class="container" id="mainContent" style="display:none;">
+        <div class="header">
+            <h1>VerseCraft AI</h1>
+            <p>Transform your thoughts into beautiful poetry</p>
+        </div>
+
+        <div class="controls">
+            <button id="surpriseBtn" class="small-btn">🎲 Surprise Me</button>
+            <select id="themeSelect" class="small-btn">
+                <option value="modern">Modern</option>
+                <option value="calligraphy">Calligraphy</option>
+                <option value="fancy">Fancy Colorful</option>
+            </select>
+            <button id="darkModeToggle" class="small-btn">🌑 Dark Mode</button>
+        </div>
+
+        <div class="input-group">
+            <input type="text" class="input-field" id="topic" placeholder="Poem theme or subject">
+            <textarea class="input-field" id="keywords" rows="3" placeholder="Key elements or emotions"></textarea>
+            <button class="generate-btn" id="generateBtn">Compose Poem 🌟</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <p class="loading-text">Weaving your poetic masterpiece...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+        <div class="poem-result" id="poemResult"></div>
+
+        <div class="history-section">
+            <button id="toggleHistory" class="small-btn">📖 History</button>
+            <div id="historyPanel" class="history-panel">
+                <div id="historyList"></div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="downloadBtn" class="generate-btn">📥 Download Poem</button>
+            <button id="copyBtn" class="generate-btn">📋 Copy Poem</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('enterBtn').addEventListener('click', function() {
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            const mainContent = document.getElementById('mainContent');
+            welcomeScreen.classList.add('fade-out');
+            setTimeout(() => {
+                welcomeScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
